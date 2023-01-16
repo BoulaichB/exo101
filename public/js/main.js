@@ -18,6 +18,13 @@ let softSkills = {
 const elements = document.querySelectorAll('#liste-soft-skills h2');
 // ### 2. Insert dans les bons H2 les pourcentages de ton objet, voici les contraintes :
 // - Utilise une boucle "for in" pour parcourir ton objet
+for (let i = 0; i < elements.length; i++) {
+    for (const skill in softSkills){
+        if(elements[i].innerText == skill){
+            elements[i].innerText += ` : ${softSkills[skill]}`;
+        }
+    }
+}
 // ### 3. Change le style des h2 selons certaines conditions :
 // - Si le pourcentage est inférieur à 50 alors le h2 a un background rouge
 // - Si le pourcentage est supérieur à 50 alors le background est vert et l'écriture blanche
